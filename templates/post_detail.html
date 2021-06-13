@@ -5,4 +5,10 @@
         <h2>{{ this_post.title }}</h2>
         <p>{{ this_post.body }}</p>
     </article>
+    <p>
+        <a href="{% url 'post_edit' this_post.pk %}">+ Изменить пост</a>
+    </p>
+    <p>
+        <a href="{% url 'post_delete' this_post.pk %}">+ Уничтожить пост</a>
+    </p>
 {% endblock %}

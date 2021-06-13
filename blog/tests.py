@@ -46,3 +46,27 @@ class BlogTests(TestCase):
         self.assertContains(resp, 'Все плохо')
         self.assertTemplateUsed(resp, 'post_detail.html')
 
+    def test_get_absolute_url(self):
+        self.assertEqual(self.post.get_absolute_url(), '/post/1/')
+
+    def test_post_create_view(self):
+        resp = self.client.post(reverse('post_new'), {
+                'title': 'pro suslin',
+                'body': 'some suslin dead for humans rush',
+                'author': self.user,
+            })
+        self.assertEqual(resp.status_code, 200)
+        self.assertContains(resp, 'pro suslin')
+        self.assertContains(resp, 'some suslin dead for humans rush')
+
+    def test_post_update_view(self):
+        resp = self.client.post(reverse('post_edit', args='1'), {
+                'title': 'new suslin',
+                'body': 'new some suslin dead for humans rush',
+            })
+        self.assertEqual(resp.status_code, 302)
+
+    def test_post_delete_view(self):
+        resp = self.client.get(reverse('post_delete', args='1'))
+        self.assertEqual(resp.status_code, 200)
+
