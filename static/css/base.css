@@ -1,0 +1,58 @@
+@font-face {
+    font-family: 'Noto Sans', sans-serif;
+    src: url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+}
+
+html {
+  font-family: 'Noto Sans', sans-serif;
+  font-size: 18px;
+}
+
+header {
+    border-bottom: 1px solid black;
+    margin-bottom: 2rem;
+    display: flex;
+}
+
+header h1 a {
+    color: red;
+    text-decoration: none;
+    transition: color 0.15s ease-in-out .1s;
+}
+
+header h1 a:hover {
+    color: gold;
+}
+
+.nav-left {
+    margin-right: auto;
+}
+
+.nav-right {
+    display: flex;
+    margin-top: 2rem;
+}
+
+.post-entry {
+    margin-bottom: 2rem;
+}
+
+.post-entry h2 {
+    margin: 0.5rem 0;
+}
+
+.post-entry h2 a, .post-entry h2 a:visited {
+    text-decoration: none;
+    color: blue;
+    transition: color 0.15s ease-in-out .1s;
+}
+
+.post-entry p {
+    font-weight: 400;
+    margin: 0;
+}
+
+.post-entry h2 a:hover {
+    color: red;
+}
+
